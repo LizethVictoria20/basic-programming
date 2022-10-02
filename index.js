@@ -1,35 +1,36 @@
-let pc = 2;
-let jugador = 2;
+//Opcion aleatoria del pc
+
+function aleatoria(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+//Funcion de jugada
+function eleccion(jugada) {
+    let resultado = ''
+    if(jugada == 1) {
+        resultado = 'Piedra 🗿'
+    }
+    else if(jugada == 2) {
+        resultado =  'Papel 📄'
+    }
+    else if(jugada == 3) {
+        resultado =  'Tijeras ✄'
+    }
+    else {
+        alert('Selecciona una opción correcta')
+    }
+    return resultado
+}
+
+let pc = aleatoria(1,3)
+let jugador = 0
 
 jugador = prompt('Selecciona 1 para piedra, 2 para papel, 3 para tijera.')
 
-//Opciones del jugador
-if(jugador == 1) {
-    alert('El jugador eligio 🗿')
-}
-else if(jugador == 2) {
-    alert('El jugador eligio 📄')
-}
-else if(jugador == 3) {
-    alert('El jugador eligio ✄')
-}
-else {
-    alert('Selecciona una opción correcta')
-}
+alert('El pc eligio: ' + eleccion(pc))
+alert('Elegiste: ' + eleccion(jugador))
 
-//Opciones del pc
-if(pc == 1) {
-    alert('El pc eligio 🗿')
-}
-else if(pc == 2) {
-    alert('El pc eligio 📄')
-}
-else if(pc == 3) {
-    alert('El pc eligio ✄')
-}
-else {
-    alert('Selecciona una opción correcta')
-}
+
 
 
 //Combate
