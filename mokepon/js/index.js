@@ -17,6 +17,9 @@ function iniciarJuego() {
     let botonTierra = document.getElementById('boton-tierra')
     botonTierra.addEventListener('click', ataqueTierra)
 
+
+    let botonReiniciar = document.getElementById('boton-reiniciar')
+    botonReiniciar.addEventListener('click', reiniciarJuego)
 }
 
 //Aleatorio
@@ -111,10 +114,19 @@ function mensajeFinal(resultado) {
     let mensaje = document.createElement('p')
     mensaje.innerHTML = resultado + obtenerNombreMascota()
     sectionMensaje.appendChild(mensaje)
+
+    let botonFuego = document.getElementById('boton-fuego')
+    botonFuego.disabled = true
+
+    let botonAgua = document.getElementById('boton-agua')
+    botonAgua.disabled = true
+
+    let botonTierra = document.getElementById('boton-tierra')
+    botonTierra.disabled = true
 }
 
 
-function  combate() {
+function combate() {
     //Vidas jugadores
     let spanVidasJugador = document.getElementById('vidas-jugador')
     let spanVidasEnemigo = document.getElementById('vidas-enemigo')
@@ -152,9 +164,13 @@ function revisarVidas() {
         mensajeFinal('PERDISTE contra ')
     }
     else if(vidasEnemigo == 0) {
-        mensaje('GANASTE contra ')
+        mensajeFinal('GANASTE contra ')
     }
-} 
+}
+
+function reiniciarJuego() {
+    location.reload()
+}
 
 
 
