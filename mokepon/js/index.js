@@ -115,17 +115,26 @@ function ataquAleatorioEnemigo() {
 }
 
 function crearMensaje(resultado) {
-    let sectionMensaje = document.getElementById('mensajes')
-    let mensaje = document.createElement('p')
-    mensaje.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ' la mascota de tu enemigo atacó con ' + ataqueEnemigo + ' - ' + resultado
-    sectionMensaje.appendChild(mensaje)
+    let sectionMensaje = document.getElementById('resultado')
+    let ataqueDelJugador = document.getElementById('ataques-del-jugador')
+    let ataqueDelEnemigo = document.getElementById('ataques-del-enemigo')
+    
+    let nuevoAtaqueJugador = document.createElement('p')
+    let nuevoAtaqueEnemigo = document.createElement('p')
+
+    sectionMensaje.innerHTML = resultado
+    nuevoAtaqueJugador.innerHTML = ataqueJugador
+    nuevoAtaqueEnemigo.innerHTML = ataqueEnemigo
+
+    ataqueDelJugador.appendChild(nuevoAtaqueJugador)
+    ataqueDelEnemigo.appendChild(nuevoAtaqueEnemigo)
 }
 
+
 function mensajeFinal(resultado) {
-    let sectionMensaje = document.getElementById('mensajes')
-    let mensaje = document.createElement('p')
-    mensaje.innerHTML = resultado + obtenerNombreMascota()
-    sectionMensaje.appendChild(mensaje)
+    let sectionMensaje = document.getElementById('resultado')
+
+    sectionMensaje.innerHTML = resultado + obtenerNombreMascota()
 
     let botonFuego = document.getElementById('boton-fuego')
     botonFuego.disabled = true
