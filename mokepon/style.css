@@ -41,7 +41,7 @@ body {
     align-items: center;
 }
 
-.tarjetas-de-pokemon:hover, #button-mascota:hover, .boton-de-ataque:hover {
+.tarjetas-de-pokemon:hover, #button-mascota:hover, .boton-de-ataque:hover, #boton-reiniciar:hover {
     cursor: pointer;
 }
 
@@ -95,9 +95,40 @@ input {
     font-family: 'Poppins', sans-serif;
     border: transparent;
     color: #114685;
-
 }
 
 .vidas {
     color: white;
+}
+
+.ataques {
+    display: grid;
+    grid-template-columns: 100px 100px;
+    color: white;
+}
+
+#ataques-del-jugador, #ataques-del-enemigo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #114685;
+    margin: 5px;
+    border-radius: 20px;
+}
+
+#vidas-jugador, #vidas-enemigo {
+    font-size: 32px;
+    margin-bottom: 0;
+}
+
+.vidas-jugador, .vidas-enemigo {
+    background-color: #EEEEEE;
+    width: 56px;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #041562;
 }
