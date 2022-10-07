@@ -20,6 +20,49 @@ let vidasJugador = 3
 let vidasEnemigo = 3
 
 
+
+class Mokepon {
+    constructor(name, avatar, life) {
+        this.name = name,
+        this.avatar = avatar,
+        this.life = life,
+        this.ataques = []
+    }
+}
+
+//Objetos de instancia que llegan desde la clase
+let hipodoge = new Mokepon('Hipodoge', './assets/mokepons_mokepon_hipodoge_attack.png', 5)
+let capipepo = new Mokepon('Capipepo', './assets/mokepons_mokepon_capipepo_attack.png', 5)
+let ratigueya = new Mokepon('Ratigueya', './assets/mokepons_mokepon_ratigueya_attack.png', 5)
+
+
+//Objetos literales no hacen parte de una clase y se envia la información con sus propiedades y atributos
+hipodoge.ataques.push(
+    {name: 'Agua 💧', id: 'boton-agua'},
+    {name: 'Agua 💧', id: 'boton-agua'},
+    {name: 'Agua 💧', id: 'boton-agua'},
+    {name: 'Fuego 🔥', id: 'boton-fuego'},
+    {name: 'Tierra ☘️', id: 'boton-tierra'} 
+)
+
+capipepo.ataques.push(
+    {name: 'Tierra ☘️', id: 'boton-tierra'},
+    {name: 'Tierra ☘️', id: 'boton-tierra'},
+    {name: 'Tierra ☘️', id: 'boton-tierra'},
+    {name: 'Agua 💧', id: 'boton-agua'},
+    {name: 'Fuego 🔥', id: 'boton-fuego'}
+)
+
+ratigueya.ataques.push(
+    {name: 'Fuego 🔥', id: 'boton-fuego'},
+    {name: 'Fuego 🔥', id: 'boton-fuego'},
+    {name: 'Fuego 🔥', id: 'boton-fuego'},
+    {name: 'Agua 💧', id: 'boton-agua'},
+    {name: 'Tierra ☘️', id: 'boton-tierra'}
+)
+
+
+
 function iniciarJuego() {
     sectionSeleccionarAtaque.style.display = 'none'
     sectionReiniciar.style.display = 'none'
