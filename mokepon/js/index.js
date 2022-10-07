@@ -12,14 +12,18 @@ const spanVidasEnemigo = document.getElementById('vidas-enemigo')
 const sectionMensaje = document.getElementById('resultado')
 const ataqueDelJugador = document.getElementById('ataques-del-jugador')
 const ataqueDelEnemigo = document.getElementById('ataques-del-enemigo')
+let botonReiniciar = document.getElementById('boton-reiniciar')
+const contenedorTarjetas = document.getElementById('contenedor-tarjetas-mascotas')
 
 
 let ataqueJugador;
 let ataqueEnemigo;
 let vidasJugador = 3
 let vidasEnemigo = 3
+let opcionDeMokepones;
 
 
+let mokepones = []
 
 class Mokepon {
     constructor(name, avatar, life) {
@@ -61,16 +65,28 @@ ratigueya.ataques.push(
     {name: 'Tierra ☘️', id: 'boton-tierra'}
 )
 
+mokepones.push(hipodoge, capipepo, ratigueya)
 
 
 function iniciarJuego() {
     sectionSeleccionarAtaque.style.display = 'none'
-    sectionReiniciar.style.display = 'none'
+
+    mokepones.map((mokepon) => {
+        opcionDeMokepones = `
+            <input type="radio" name="mascota" id=${mokepon.name} />
+            <label class="tarjetas-de-pokemon" for=${mokepon.name}>
+                <p>${mokepon.name}</p>
+                <img src=${mokepon.avatar} alt=${mokepon.name}>
+            </label>
+        `
+        contenedorTarjetas.innerHTML += opcionDeMokepones
+    })
+
+
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
     botonFuego.addEventListener('click', ataqueFuego)
     botonAgua.addEventListener('click', ataqueAgua)
     botonTierra.addEventListener('click', ataqueTierra)
-    let botonReiniciar = document.getElementById('boton-reiniciar')
     botonReiniciar.addEventListener('click', reiniciarJuego)
 }
 
