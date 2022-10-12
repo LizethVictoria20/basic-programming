@@ -124,26 +124,10 @@ function seleccionarMascotaJugador() {
 }
 
 function seleccionarMascotaEnemigo() {
-    let mascotaAleatoria = obtenerNombreMascota()
-    spanMascotaEnemigo.innerHTML = mascotaAleatoria
+    let mascotaAleatoria = aleatoria(0, mokepones.length -1)
+    spanMascotaEnemigo.innerHTML =  mokepones[mascotaAleatoria].name
 }
 
-function obtenerNombreMascota() {
-    let mascotaAleatoria = aleatoria(1, 3)
-
-    if (mascotaAleatoria == 1) {
-        //Hipodoge
-        return 'Hipodoge'
-    }
-    else if (mascotaAleatoria == 2) {
-        //Capipepo
-        return 'Capipepo'
-    }
-    else {
-        //Ratigueya
-        return 'Ratigueya'
-    }
-}
 
 function ataqueFuego() {
     ataqueJugador = 'FUEGO'
