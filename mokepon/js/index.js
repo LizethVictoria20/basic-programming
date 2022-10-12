@@ -15,6 +15,10 @@ const ataqueDelEnemigo = document.getElementById('ataques-del-enemigo')
 let botonReiniciar = document.getElementById('boton-reiniciar')
 const contenedorTarjetas = document.getElementById('contenedor-tarjetas-mascotas')
 
+let inputHipodoge; 
+let inputCapipepo; 
+let inputRatigueya; 
+
 
 let ataqueJugador;
 let ataqueEnemigo;
@@ -80,6 +84,10 @@ function iniciarJuego() {
             </label>
         `
         contenedorTarjetas.innerHTML += opcionDeMokepones
+
+        inputHipodoge = document.getElementById('Hipodoge')
+        inputCapipepo = document.getElementById('Capipepo')
+        inputRatigueya = document.getElementById('Ratigueya')
     })
 
 
@@ -96,16 +104,16 @@ function aleatoria(min, max) {
 }
 
 function seleccionarMascotaJugador() {
-    
     sectionSeleccionarMascota.style.display = 'none'
     sectionSeleccionarAtaque.style.display = 'flex'
-    if(hipodoge.checked) {
+
+    if(Hipodoge.checked) {
         spanMascotaJugador.innerHTML = 'Hipodoge'
     }
-    else if(capipepo.checked) {
+    else if(Capipepo.checked) {
         spanMascotaJugador.innerHTML = 'Capipepo'
     }
-    else if(ratigueya.checked) {
+    else if(Ratigueya.checked) {
         spanMascotaJugador.innerHTML = 'Ratigueya'
     }
     else {
