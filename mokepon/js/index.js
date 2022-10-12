@@ -106,15 +106,15 @@ function aleatoria(min, max) {
 function seleccionarMascotaJugador() {
     sectionSeleccionarMascota.style.display = 'none'
     sectionSeleccionarAtaque.style.display = 'flex'
-
-    if(Hipodoge.checked) {
-        spanMascotaJugador.innerHTML = 'Hipodoge'
+    
+    if(inputHipodoge.checked) {
+        spanMascotaJugador.innerHTML = inputHipodoge.id
     }
-    else if(Capipepo.checked) {
-        spanMascotaJugador.innerHTML = 'Capipepo'
+    else if(inputCapipepo.checked) {
+        spanMascotaJugador.innerHTML = inputCapipepo.id
     }
-    else if(Ratigueya.checked) {
-        spanMascotaJugador.innerHTML = 'Ratigueya'
+    else if(inputRatigueya.checked) {
+        spanMascotaJugador.innerHTML = inputRatigueya.id
     }
     else {
         alert('Debes seleccionar a tu mascota')
