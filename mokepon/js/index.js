@@ -23,12 +23,12 @@ let botonTierra;
 let botones = []
 
 let ataqueJugador = []
-let ataqueEnemigo;
+let ataqueEnemigo = []
 let vidasJugador = 3
 let vidasEnemigo = 3
 let opcionDeMokepones;
 let botonesAtaques;
-
+let ataquesMokeponEnemigo;
 
 let mascotaJugador;
 
@@ -182,29 +182,32 @@ function secuenciaAtaque() {
                 console.log(ataqueJugador)
                 boton.style.background = '#112f58'
             }
+            ataquAleatorioEnemigo()
         })
-    }) 
+    })
 }
 
 function seleccionarMascotaEnemigo() {
     let mascotaAleatoria = aleatoria(0, mokepones.length -1)
     spanMascotaEnemigo.innerHTML =  mokepones[mascotaAleatoria].name
+    ataquesMokeponEnemigo = mokepones[mascotaAleatoria].ataques
     secuenciaAtaque()
 }
 
 function ataquAleatorioEnemigo() {
     //  1.FUEGO - 2.AGUA - 3-TIERRA
-    let ataque = aleatoria(1, 3)
+    let ataqueAleatorio = aleatoria(0, ataquesMokeponEnemigo.length -1)
 
-    if (ataque == 1) {
-        ataqueEnemigo = 'FUEGO'
+    if (ataqueAleatorio == 0 || ataqueAleatorio == 1) {
+        ataqueEnemigo.push('FUEGO')
     }
-    else if (ataque == 2) {
-        ataqueEnemigo = 'AGUA'
+    else if (ataqueAleatorio == 2 || ataqueAleatorio == 3) {
+        ataqueEnemigo.push('AGUA')
     }
     else {
-        ataqueEnemigo = 'TIERRA'
+        ataqueEnemigo.push('TIERRA')
     }
+    console.log(ataqueEnemigo)
     combate()
 }
 
