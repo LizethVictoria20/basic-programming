@@ -79,6 +79,7 @@ mokepones.push(hipodoge, capipepo, ratigueya)
 
 function iniciarJuego() {
     sectionSeleccionarAtaque.style.display = 'none'
+    sectionReiniciar.style.display = 'none'
 
     mokepones.map((mokepon) => {
         opcionDeMokepones = `
@@ -218,6 +219,8 @@ function mensajeFinal(resultado) {
     botonAgua.disabled = true
     let botonTierra = document.getElementById('boton-tierra')
     botonTierra.disabled = true
+    sectionReiniciar.style.display = 'block'
+
 }
 
 
@@ -252,10 +255,10 @@ function combate() {
 //¿Vives o mueres?
 function revisarVidas() {
     if(vidasJugador == 0) {
-        mensajeFinal('PERDISTE contra ')
+        mensajeFinal('CONGRATULATION ')
     }
     else if(vidasEnemigo == 0) {
-        mensajeFinal('GANASTE contra ')
+        mensajeFinal('LOSER ')
     }
 }
 
